@@ -14,5 +14,25 @@
     <% end %>
   </div>
 
+  <div>
+    <% if @error %>
+      <p><%= @error %></p>
+    <% elsif @venues %>
+      <ul>
+      <% @venues.each do |venue| %>
+        <li>
+          <%= venue["name"] %><br>
+          <%= venue["location"]["address"] %>, <%= venue["location"]["city"] %>, <%= venue["location"]["state"] %>, <%= venue["location"]["postalCode"] %> <br>
+          <% venue["categories"].each do |venue_category| %>
+            <%= venue_category["name"] %>
+          <% end %>
+          <br>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+
 
 </div>
