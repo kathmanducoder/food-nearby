@@ -9,7 +9,7 @@
   <!-- Search form -->
   <div class="text-center form-css">
     <%= form_tag '/search' do %>
-      <%= text_field_tag :zipcode, nil, class: "search-bar", placeholder: "   Zipcode" %>
+      <%= text_field_tag :query, nil, class: "search-bar", placeholder: "City or Zipcode" %>
       <%= submit_tag "Search", class: "search-button" %>
     <% end %>
   </div>

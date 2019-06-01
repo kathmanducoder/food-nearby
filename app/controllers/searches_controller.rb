@@ -8,7 +8,7 @@ class SearchesController < ApplicationController
         req.params['client_id'] = '1CKPP4AE2DRUMBZZUT3JWDRQJXUOLUBM341NRRUY2ONNX2V4'
         req.params['client_secret'] = 'HJDYSJLLQHLGVDZJFNAM5TUQEYI4VT3BQA0VPECJNO4UIDJA'
         req.params['v'] = '20160201'
-        req.params['near'] = params[:zipcode]
+        req.params['near'] = params[:query]
         req.params['query'] = 'restaurants'
       end
 
