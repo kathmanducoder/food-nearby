@@ -5,4 +5,14 @@
       <span class="title-food">Food</span><span class="title-nearby">Nearby</span>
     </div>
   </div>
+
+  <!-- Search form -->
+  <div class="text-center form-css">
+    <%= form_tag '/search' do %>
+      <%= text_field_tag :zipcode, nil, class: "search-bar", placeholder: "   Zipcode" %>
+      <%= submit_tag "Search", class: "search-button" %>
+    <% end %>
+  </div>
+
+
 </div>
