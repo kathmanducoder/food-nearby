@@ -1,5 +1,3 @@
-require "pry"
-
 class SearchesController < ApplicationController
 
   def search
