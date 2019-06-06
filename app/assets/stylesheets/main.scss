@@ -1,6 +1,6 @@
-body {
-//  background-color: rgb(234, 232, 221);
-background-color: rgb(179, 218, 217);
+.container {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    background-size: cover;
 }
 
 .header {
@@ -9,6 +9,7 @@ background-color: rgb(179, 218, 217);
 }
 
 .hamburger {
+  padding-top: 10px;
   width: 75px;
   height: 75px;
   display: inline-block;
@@ -18,7 +19,7 @@ background-color: rgb(179, 218, 217);
   margin-left: 25px;
   font-size: 44px;
   font-family: Arial;
-  color: rgb(230, 91, 85);
+  color: black;
   font-weight: bold;
 }
 
