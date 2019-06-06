@@ -18,29 +18,27 @@
         <p class="error">There was an error making your request. Please try again.</p>
       <% elsif @venues %>
         <% @venues.each do |venue| %>
-          <div class="card shadow p-3 mb-5 bg-white rounded venue-card">
-            <div class="venue-info">
-              <div class="row venue-base venue-name"><%= venue["name"] %></div>
-              <% if venue["location"]["address"] %>
-                <div class="row venue-base"><%= venue["location"]["address"] %></div>
+          <div class="shadow p-3 mb-5 bg-white rounded venue-card">
+            <div class="venue-base venue-name"><%= venue["name"] %></div>
+            <% if venue["location"]["address"] %>
+              <div class="card-text venue-base"><%= venue["location"]["address"] %></div>
+            <% end %>
+            <% second_address = "" %>
+            <% if venue["location"]["city"] && !venue["location"]["city"].empty? %>
+              <% second_address += "#{venue["location"]["city"]} | " %>
+            <% end %>
+            <% if venue["location"]["state"] && !venue["location"]["state"].empty? %>
+              <% second_address += "#{venue["location"]["state"]} | " %>
+            <% end %>
+            <% if venue["location"]["postalCode"] && !venue["location"]["postalCode"].empty? %>
+              <% second_address += "#{venue["location"]["postalCode"]}" %>
+            <% end %>
+            <div class="venue-base"><%= second_address %></div>
+            <div class="venue-base venue-categories">
+              Listed under:
+              <% venue["categories"].each do |venue_category| %>
+                <%= venue_category["name"] %>
               <% end %>
-              <% second_address = "" %>
-              <% if venue["location"]["city"] && !venue["location"]["city"].empty? %>
-                <% second_address += "#{venue["location"]["city"]} | " %>
-              <% end %>
-              <% if venue["location"]["state"] && !venue["location"]["state"].empty? %>
-                <% second_address += "#{venue["location"]["state"]} | " %>
-              <% end %>
-              <% if venue["location"]["postalCode"] && !venue["location"]["postalCode"].empty? %>
-                <% second_address += "#{venue["location"]["postalCode"]}" %>
-              <% end %>
-              <div class="row venue-base"><%= second_address %></div>
-              <div class="row venue-base venue-categories">
-                Listed under:
-                <% venue["categories"].each do |venue_category| %>
-                  <%= venue_category["name"] %>
-                <% end %>
-              </div>
             </div>
           </div>
         <% end %>

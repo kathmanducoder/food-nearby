@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(234, 232, 221);
+//  background-color: rgb(234, 232, 221);
+background-color: rgb(179, 218, 217);
 }
 
 .header {
@@ -42,7 +43,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: rgb(234, 232, 221);
+  background-color: green;
 }
 
 .venue-info {
@@ -58,6 +59,7 @@ body {
 }
 
 .venue-name {
+  font-size: 22px;
   font-weight: bold;
 }
 
