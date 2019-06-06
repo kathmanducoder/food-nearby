@@ -1,15 +1,13 @@
 <div class="container">
-  <div class="row header-row justify-content-center">
+  <div class="row justify-content-center header">
     <%= image_tag("hamburger.png", class:"hamburger") %>
-    <div class="title">
-      <span class="title-food">Food</span><span class="title-nearby">Nearby</span>
-    </div>
+    <div class="title">FOOD NEARBY</div>
   </div>
 
   <!-- Search form -->
-  <div class="text-center form-css">
+  <div class="text-center">
     <%= form_tag '/search' do %>
-      <%= text_field_tag :query, nil, class: "search-bar", placeholder: "City or Zipcode" %>
+      <%= text_field_tag :query, nil, placeholder: "City or Zipcode", size: 40 %>
       <%= submit_tag "Search", class: "search-button" %>
     <% end %>
   </div>
@@ -17,30 +15,32 @@
   <div class="row venue-box">
     <div class="col-sm-12">
       <% if @error %>
-        <p><%= @error %></p>
+        <p class="error">There was an error making your request. Please try again.</p>
       <% elsif @venues %>
         <% @venues.each do |venue| %>
-          <div class="venue">
-            <div class="row venue-name"><%= venue["name"] %></div>
-            <% if venue["location"]["address"] %>
-              <div class="row venue-address"><%= venue["location"]["address"] %></div>
-            <% end %>
-            <% second_address = "" %>
-            <% if venue["location"]["city"] && !venue["location"]["city"].empty? %>
-              <% second_address += "#{venue["location"]["city"]} | " %>
-            <% end %>
-            <% if venue["location"]["state"] && !venue["location"]["state"].empty? %>
-              <% second_address += "#{venue["location"]["state"]} | " %>
-            <% end %>
-            <% if venue["location"]["postalCode"] && !venue["location"]["postalCode"].empty? %>
-              <% second_address += "#{venue["location"]["postalCode"]}" %>
-            <% end %>
-            <div class="row venue-address"><%= second_address %></div>
-            <div class="row venue-categories">
-              Listed under:
-              <% venue["categories"].each do |venue_category| %>
-                <%= venue_category["name"] %>
+          <div class="card shadow p-3 mb-5 bg-white rounded venue-card">
+            <div class="venue-info">
+              <div class="row venue-base venue-name"><%= venue["name"] %></div>
+              <% if venue["location"]["address"] %>
+                <div class="row venue-base"><%= venue["location"]["address"] %></div>
               <% end %>
+              <% second_address = "" %>
+              <% if venue["location"]["city"] && !venue["location"]["city"].empty? %>
+                <% second_address += "#{venue["location"]["city"]} | " %>
+              <% end %>
+              <% if venue["location"]["state"] && !venue["location"]["state"].empty? %>
+                <% second_address += "#{venue["location"]["state"]} | " %>
+              <% end %>
+              <% if venue["location"]["postalCode"] && !venue["location"]["postalCode"].empty? %>
+                <% second_address += "#{venue["location"]["postalCode"]}" %>
+              <% end %>
+              <div class="row venue-base"><%= second_address %></div>
+              <div class="row venue-base venue-categories">
+                Listed under:
+                <% venue["categories"].each do |venue_category| %>
+                  <%= venue_category["name"] %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
