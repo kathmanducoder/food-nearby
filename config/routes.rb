@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "searches#index"
   get '/search', to: 'searches#index'
   post '/search', to: 'searches#search'
+  get '*path' => redirect('/')
 end
