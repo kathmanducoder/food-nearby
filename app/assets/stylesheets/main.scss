@@ -1,26 +1,25 @@
-.container {
-    background-image: linear-gradient(to bottom right, red, yellow);
-    background-size: cover;
-}
-
 .header {
-  margin-top: 3%;
-  margin-bottom: 3%;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  background-size: cover;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.hamburger {
+.app-name {
+  font-family: Arial;
+  font-size: 44px;
+  color: black;
+  font-weight: bold;
+
+  margin-right: 30px;
   padding-top: 10px;
-  width: 75px;
-  height: 75px;
+
   display: inline-block;
 }
 
-.title {
-  margin-left: 25px;
-  font-size: 44px;
-  font-family: Arial;
-  color: black;
-  font-weight: bold;
+.app-image {
+  width: 75px;
+  height: 100px;
 }
 
 .search-button {
@@ -35,23 +34,16 @@
   color: red;
 }
 
-.venue-box {
+.venues {
   margin-top: 5%;
 }
 
-.venue-card {
+.custom-card {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: green;
-}
-
-.venue-info {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-color: blue;
 }
 
 .venue-base {
