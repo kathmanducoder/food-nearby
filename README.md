@@ -1,6 +1,7 @@
-# FoodNearby
+## FoodNearby
 
-# Description
+#### Description
 A Rails app that uses FourSquare's search venue API to find places to eat nearby given a city name or zip code.
 
+#### Screenshot
 ![Screenshot](https://i.imgur.com/7utORJx.png)
